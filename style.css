@@ -196,6 +196,11 @@ h3 {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
+a,
 p {
   font-weight: var(--fw-s-l);
   font-family: var(--ff-secondary);
@@ -209,7 +214,7 @@ header {
   justify-content: space-between;
   background-color: var(--clr-white);
   height: 200px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   padding-inline: 50px;
 }
@@ -280,6 +285,10 @@ header {
   border-radius: 10px;
   padding-block: 80px;
   padding-inline: 40px;
+
+  &:hover {
+    box-shadow: #c096f823 6px 2px 16px 0px, #a789ce84 -6px -2px 16px 0px;
+  }
 
   & h2 {
     width: 10ch;
@@ -370,10 +379,73 @@ button {
   height: 50px;
   padding-block: 10px;
   padding-inline: 20px;
-  margin: auto;
+  margin-inline: auto;
+  margin-block: 80px;
   width: 140px;
 }
 
+footer {
+  background-color: var(--clr-footer-bg);
+  color: var(--clr-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: 40px;
+  padding-inline: 80px;
+  padding-block: 40px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+
+  & p {
+    text-align: center;
+    width: 19ch;
+  }
+
+  & .social-icons {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+.left .logo{
+  display: flex;
+  /* flex-direction: column; */
+  & img {
+    width: 45px;
+    height: 45px;
+  }
+
+  & h3 {
+    font-size: 25px;
+  }
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  text-align: center;
+
+  & .links {
+    color: var(--clr-white);
+    cursor: pointer;
+  }
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  & p span {
+    padding-left: 60px;
+    color: var(--clr-footer-span-text);
+  }
+}
 
 
 
@@ -383,6 +455,12 @@ button {
   background: -webkit-linear-gradient(90deg, #061430 0%, #00000000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  &[data-light-logo] {
+    background: -webkit-linear-gradient(90deg, #fffdfd 0%, #b2b2b25e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 } 
 
 .container {
