@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;700&display=swap');
+
+:root {
+  /* text color */
+  --clr-h1: #061430;
+  --clr-text-black: #000000;
+  --clr-white: #FFFFFF;
+  --clr-section-bg: hsla(0, 11%, 80%, 0.49);
+
+  /* footer color */
+  --clr-footer-bg: hsla(220, 77%, 11%, 1);
+  --clr-footer-span-text: #887F7F;
+
+  /* button color */
+  --clr-btn: #417DF2;
+
+  /* gradients */
+  --clr-gradient-border: linear-gradient(180deg, #B694FC 0%, rgba(250, 44, 56, 0.427083) 99.99%, rgba(17, 17, 16, 0) 100%);
+  --clr-logo-text: linear-gradient(180deg, #061430 0%, #00000000 100%);
+
+  /* font-family */
+  --ff-primary: 'Rubik', sans-serif;
+  --ff-secondary: 'Poppins', sans-serif;
+
+
+  /* font-weight */
+  /* primary */
+  --fw-p-l: 300;
+  --fw-p-m: 500;
+  --fw-p-b: 700;
+  
+  /* secondary */
+  --fw-s-t: 100;
+  --fw-s-xl: 200;
+  --fw-s-l: 300;
+  --fw-s-m: 500;
+  --fw-s-b: 700;
+
+  /* font-size */
+  /* if the utility class is numbered the media query won't change it but the ones with names do change   */
+  /* calc */
+  /* The calc() function takes a single expression as its parameter, with the expression's result used as the value.  */
+  /* *
+  Multiplication. At least one of the arguments must be a <number>.
+  /
+  Division. The right-hand side must be a <number>. */
+
+  --fs-default: 16;
+
+  /* increaments of 2 to the px values */
+  --fs-xxs: calc((10 / var(--fs-default) * 1rem));
+  --fs-xsm: calc((12 / var(--fs-default) * 1rem));
+  --fs-sm: calc((14 / var(--fs-default) * 1rem));
+  --fs-100: calc((16 / var(--fs-default) * 1rem));
+  --fs-200: calc((18 / var(--fs-default) * 1rem));
+  --fs-300: calc((20 / var(--fs-default) * 1rem));
+  --fs-400: calc((22 / var(--fs-default) * 1rem));
+  --fs-500: calc((24 / var(--fs-default) * 1rem));
+  --fs-600: calc((26 / var(--fs-default) * 1rem));
+  --fs-700: calc((28 / var(--fs-default) * 1rem));
+  --fs-750: calc((30 / var(--fs-default) * 1rem));
+  --fs-800: calc((40 / var(--fs-default) * 1rem));
+  --fs-900: calc((48 / var(--fs-default) * 1rem));
+
+  --fs-nav: var(--fs-100);
+  --fs-primary-heading: var(--fs-900);
+  --fs-secondary-heading: var(--fs-800);
+  --fs-body: var(--fs-400);
+  --section-margin: var(--fs-750)
+
+  /* padding and margin utility classes */
+  --size-100: .25rem;
+  --size-200: .5rem;
+  --size-300: .75rem;
+  --size-400: 1rem;
+  --size-500: 1.25rem;
+  --size-600: 1.5rem;
+  --size-700: 2rem;
+  --size-800: 3rem;
+  --size-900: 4rem;
+
+  /* --flow-spacer:  */
+}
+
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* html {
+  scroll-snap-type: y proximity;
+  scroll-padding: 100px;
+} */
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* general styling */
+h1, 
+h2,
+h3 {
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-primary-bold);
+}
+
+h1 {
+  color: var(--clr-h1);
+  font-size: var(--fs-primary-heading);
+  line-height: 1.4;
+}
+
+h2 {
+  font-size: var(--fs-secondary-heading);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: var(--fs-body);
+}
+
+@media (max-width: 40em){
+  p,
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  h2 {
+    font-size: var(--fs-700);
+  }
+}
+
+p {
+  font-weight: var(--fw-s-l);
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-300);
+  /* max-width: 45ch; */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--clr-white);
+  height: 200px;
+  border: 1px solid red;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  padding-inline: 50px;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  & img {
+    width: 20px;
+    height: 20px;
+  }
+  & h3 {
+    font-size: 20px;
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-s-b);
+    
+  }
+}
+
+.navigation {
+  display: flex;
+  gap: 50px;
+  font-family: var(--ff-secondary);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.bg-h1 {
+  display: flex;
+  align-items: end;  
+  background-image: url(./assets/background-img-3.png);
+  background-repeat: no-repeat;
+  background-position: 80% 30%;
+  background-size: cover;
+  height: 70vh;
+
+  & h1 {
+    /* width: 10ch; */
+    font-weight: var(--fw-s-b);
+    font-size: clamp(80px, 23vw, 130px);
+    padding-bottom: 50px;
+  }
+}
+
+.content {
+  margin-top: 15rem;
+}
+
+[data-grid] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding-inline: 30px;
+  grid-gap: 25px;
+  /* justify-content: space-evenly;
+  justify-items: center;
+  align-content: center;
+  align-items: center; */
+}
+
+.benefit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  padding-block: 80px;
+  padding-inline: 40px;
+
+  & h2 {
+    width: 10ch;
+    text-align: center;
+    padding-block: 20px;
+  }
+
+  & p {
+    text-align: center;
+  }
+}
+
+[data-bg] {
+  background-color: var( --clr-section-bg);
+}
+
+.gradient-border {
+  background: -webkit-linear-gradient(180deg, #B694FC 0%, rgba(250, 44, 56, 0.427083) 99.99%, rgba(17, 17, 16, 0) 100%);
+  /* -webkit-background-clip: ; */
+  -webkit-text-fill-color: transparent;
+  width: 4px;
+  height: 50px;
+}
+
+.even-columns {
+  display: flex;
+  padding-inline: 80px;
+  padding-block: 80px;
+  /* justify-content: center; */
+  gap: 80px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &[data-align-center] {
+    justify-content: flex-start;
+    gap: 30px;
+  }
+}
+
+[data-center-text-container] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+}
+
+[data-flex-gradient-border] {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  & .gradient-border {
+    height: 30px;
+  }
+
+  & h3 {
+    font-size: 28px;
+  }
+}
+
+.text-content {
+  & h2 {
+    padding-block: 30px;
+  }
+  & p {
+    width: 100%;
+    max-width: 60ch;
+  }
+}
+
+.button {
+  display: flex;
+  width: 100%;
+}
+
+button {
+  background-color: var(--clr-btn);
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0px 16px 24px 2px #00000024;
+  color: var(--clr-white);
+  cursor: pointer;
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-p-l);
+  height: 50px;
+  padding-block: 10px;
+  padding-inline: 20px;
+  margin: auto;
+  width: 140px;
+}
+
+
+
+
+/* utility classes */
+.gradient-text {
+  /* clip gradient to text */
+  background: -webkit-linear-gradient(90deg, #061430 0%, #00000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} 
+
+.container {
+  --max-width: 1677px;
+  --padding: 1rem;
+  /* choose the smaller value between the custom variable and 100% */
+  /* the minus takes a padding of 1rem * 2 from both sides of the container */
+  width: min(var(--max-width), 100% - (var(--padding) * 5));
+  margin-inline: auto;
+}
+
+.container-no-padding {
+  --max-width: 1677px;
+  --padding: 0rem;
+  /* choose the smaller value between the custom variable and 100% */
+  /* the minus takes a padding of 1rem * 2 from both sides of the container */
+  width: min(var(--max-width), 100% - (var(--padding) * 5));
+  margin-inline: auto;
+}
