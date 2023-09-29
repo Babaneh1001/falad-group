@@ -298,7 +298,7 @@ header {
   & h1 {
     /* width: 10ch; */
     font-weight: var(--fw-s-b);
-    font-size: clamp(70px, 10vw, 130px);
+    font-size: clamp(40px, 6vw, 120px);
     padding-bottom: 50px;
   }
 }
@@ -316,7 +316,7 @@ header {
   & h1 {
     /* width: 10ch; */
     font-weight: var(--fw-s-b);
-    font-size: clamp(70px, 10vw, 130px);
+    font-size: clamp(40px, 6vw, 120px);
     padding-bottom: 50px;
   }
 }
