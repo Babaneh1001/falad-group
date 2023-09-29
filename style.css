@@ -144,6 +144,13 @@ picture {
   display: block;
 }
 
+@media (max-width: 70em) {
+  img,
+  picture {
+    margin: auto;
+  }
+}
+
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
@@ -184,10 +191,20 @@ h3 {
   font-size: var(--fs-body);
 }
 
+/* h1, h2, p {
+  font-size: clamp(var(--min), var(--val), var(--max));
+}
+
+h1, h2, p {
+  font-size: clamp(var(--min), var(--val), var(--max));
+  color: red;
+} */
+
 @media (max-width: 40em){
   p,
   h1,
-  h2 {
+  h2,
+  h3 {
     text-align: center;
   }
 
@@ -213,7 +230,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: var(--clr-white);
-  height: 200px;
+  height: 120px;
   /* border: 1px solid red; */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   padding-inline: 50px;
@@ -235,6 +252,14 @@ header {
   }
 }
 
+@media (max-width: 25em) {
+  .logo {
+    & h3 {
+      display: none;
+    }
+  }
+}
+
 .navigation {
   display: flex;
   gap: 50px;
@@ -244,20 +269,71 @@ header {
   }
 }
 
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 50em) {
+
+  .navigation {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
 .bg-h1 {
   display: flex;
   align-items: end;  
   background-image: url(./assets/background-img-3.png);
   background-repeat: no-repeat;
-  background-position: 80% 30%;
+  /* background-position: 80% 30%; */
   background-size: cover;
   height: 70vh;
+  min-width: 300px;
 
   & h1 {
     /* width: 10ch; */
     font-weight: var(--fw-s-b);
-    font-size: clamp(80px, 23vw, 130px);
+    font-size: clamp(70px, 10vw, 130px);
     padding-bottom: 50px;
+  }
+}
+
+.bg-about-us {
+  display: flex;
+  align-items: end;
+  background-image: url(./assets/about-us-bg-img.png);
+  background-repeat: no-repeat;
+  /* background-position: 80% 30%; */
+  background-size: cover;
+  height: 70vh;
+  min-width: 300px;
+
+  & h1 {
+    /* width: 10ch; */
+    font-weight: var(--fw-s-b);
+    font-size: clamp(70px, 10vw, 130px);
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 20em) {
+  .bg-h1 {
+    align-items: center;
+  }
+}
+
+@media (max-width: 30em) {
+  .bg-about-us {
+    align-items: center;
+
+    & h1 {
+      font-size: clamp(50px, 10vw, 60px);
+    }
   }
 }
 
@@ -267,7 +343,7 @@ header {
 
 [data-grid] {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   padding-inline: 30px;
   grid-gap: 25px;
   /* justify-content: space-evenly;
@@ -319,6 +395,18 @@ header {
   padding-block: 80px;
   /* justify-content: center; */
   gap: 80px;
+}
+
+.even-columns[data-reverse] {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 70em) {
+  .even-columns {
+    display: block;
+    /* background-color: red; */
+  }
 }
 
 .text-container {
@@ -395,6 +483,20 @@ footer {
   padding-block: 40px;
 }
 
+@media (max-width: 72em) {
+  footer {
+    display: block;
+  }
+
+  .middle {
+    padding-block: 40px;
+  }
+
+  .right {
+    align-items: center;
+  }
+}
+
 .left {
   display: flex;
   align-items: center;
@@ -441,9 +543,27 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  & p span {
-    padding-left: 60px;
+
+  & p.span {
+    /* padding-left: 60px; */
     color: var(--clr-footer-span-text);
+  }
+
+  & .text {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 40em) {
+  .right {
+    /* background-color: red; */
+
+    & .text{
+      /* color: red; */
+      display: block;
+      gap: 10px;
+    }
   }
 }
 
@@ -470,6 +590,7 @@ footer {
   /* the minus takes a padding of 1rem * 2 from both sides of the container */
   width: min(var(--max-width), 100% - (var(--padding) * 5));
   margin-inline: auto;
+  min-width: 300px;
 }
 
 .container-no-padding {
@@ -479,4 +600,5 @@ footer {
   /* the minus takes a padding of 1rem * 2 from both sides of the container */
   width: min(var(--max-width), 100% - (var(--padding) * 5));
   margin-inline: auto;
+  min-width: 300px;
 }
