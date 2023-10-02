@@ -142,12 +142,14 @@ img,
 picture {
   max-width: 100%;
   display: block;
+  height: fit-content;
 }
 
 @media (max-width: 70em) {
   img,
   picture {
-    margin: auto;
+    /* margin: auto; */
+    height: fit-content;
   }
 }
 
@@ -201,10 +203,13 @@ h1, h2, p {
 } */
 
 @media (max-width: 40em){
-  p,
+  /* p,
   h1,
   h2,
   h3 {
+    text-align: center;
+  } */
+  p {
     text-align: center;
   }
 
@@ -240,6 +245,7 @@ header {
   display: flex;
   gap: 10px;
   align-items: center;
+
   & img {
     width: 20px;
     height: 20px;
@@ -252,7 +258,7 @@ header {
   }
 }
 
-@media (max-width: 25em) {
+@media (max-width: 26em) {
   .logo {
     & h3 {
       display: none;
@@ -269,11 +275,20 @@ header {
   }
 }
 
-.hamburger {
+.hamburger,
+.hamburger-menu,
+.navigation-for-hamburger {
   display: none;
 }
 
-@media (max-width: 50em) {
+.navigation-for-hamburger {
+  margin-left: auto;
+  padding-block: 10px;
+  padding-inline: 10px;
+}
+
+
+@media (max-width: 35em) {
 
   .navigation {
     display: none;
@@ -282,7 +297,71 @@ header {
   .hamburger {
     display: block;
     cursor: pointer;
+    position: relative;
   }
+
+  /* .hidden {
+    display: none;
+  } */
+
+  .hamburger-menu {
+    display: block;
+
+  }
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .navigation-for-hamburger {
+    display: block;
+    background: linear-gradient(180deg, #417DF2 0%, rgba(169, 196, 249, 0.453125) 92.19%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 6px;
+    height: 220px;
+    width: 100px;
+    position: fixed;
+    left: 250px;
+    top: 40px;
+    text-align: left;
+    cursor: pointer;
+
+    & li {
+      padding-block: 30px;
+    }
+    
+    & li a{
+      font-size: var(--fs-100);
+      text-align: center;
+    }
+  }
+
+}
+
+@media (min-width: 450px) and (max-width: 560px) {
+  .navigation-for-hamburger {
+    display: block;
+    background: linear-gradient(180deg, #417DF2 0%, rgba(169, 196, 249, 0.453125) 92.19%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 6px;
+    height: 220px;
+    width: 100px;
+    position: fixed;
+    left: 380px;
+    top: 40px;
+    text-align: left;
+    cursor: pointer;
+
+    & li {
+      padding-block: 30px;
+    }
+    
+    & li a{
+      font-size: var(--fs-100);
+      text-align: center;
+    }
+  }
+
+}
+
+.hidden {
+  display: none;
 }
 
 .bg-h1 {
@@ -297,9 +376,24 @@ header {
 
   & h1 {
     /* width: 10ch; */
+    /* text-align: center; */
     font-weight: var(--fw-s-b);
-    font-size: clamp(40px, 6vw, 120px);
+    font-size: clamp(80px, 6vw, 120px);
     padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 44em) {
+  .bg-h1 {
+    /* align-items: center; */
+    /* text-align: center; */
+
+    & h1 {
+      /* color: red; */
+      font-size: 5rem;
+      text-align: center;
+      padding-bottom: 10px;
+    }
   }
 }
 
@@ -313,26 +407,22 @@ header {
   height: 70vh;
   min-width: 300px;
 
-  & h1 {
-    /* width: 10ch; */
+  /* & h1 {
     font-weight: var(--fw-s-b);
     font-size: clamp(40px, 6vw, 120px);
     padding-bottom: 50px;
-  }
+  } */
 }
 
-@media (max-width: 20em) {
-  .bg-h1 {
-    align-items: center;
-  }
-}
 
-@media (max-width: 30em) {
+@media (max-width: 37em) {
   .bg-about-us {
-    align-items: center;
+    /* align-items: center; */
 
     & h1 {
-      font-size: clamp(50px, 10vw, 60px);
+      /* color: red; */
+      font-size: clamp(50px, 14vw, 120px);
+      padding-bottom: 60px;
     }
   }
 }
@@ -395,17 +485,27 @@ header {
   padding-block: 80px;
   /* justify-content: center; */
   gap: 80px;
+
+  & img {
+    padding-bottom: 60px;
+  }
 }
 
-.even-columns[data-reverse] {
+/* .even-columns[data-column-reverse] {
   display: flex;
   flex-direction: row-reverse;
-}
+} */
 
 @media (max-width: 70em) {
   .even-columns {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 20px;
     /* background-color: red; */
+  }
+
+  [data-column-reverse] {
+    flex-direction: column-reverse;
   }
 }
 
@@ -420,10 +520,35 @@ header {
   }
 }
 
+@media (max-width: 70em) {
+  .text-container {
+    align-items: center;
+    /* background-color: red; */
+    text-align: center;
+
+    /* & .gradient-border {
+      align-self: flex-start;
+    } */
+  }
+}
+
 [data-center-text-container] {
   display: flex;
   flex-direction: column;
   justify-content: center;  
+  gap: 20px;
+}
+
+@media (max-width: 70em) {
+  [data-center-text-container] {
+    align-items: center;
+    /* background-color: red; */
+    text-align: center;
+
+    /* & .gradient-border {
+      align-self: flex-start;
+    } */
+  }
 }
 
 [data-flex-gradient-border] {
@@ -447,6 +572,7 @@ header {
   & p {
     width: 100%;
     max-width: 60ch;
+    padding-bottom: 30px;
   }
 }
 

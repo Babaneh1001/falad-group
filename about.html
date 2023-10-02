@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="./assets/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Falad Group</title>
+    <link rel="stylesheet" href="style.css">
     <!-- <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,600,300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,12 +18,22 @@
           <img src="./assets/logo.png" alt="falad-group-logo">
           <h3 class="gradient-text">FALAD GROUP LLC.</h3>
         </div>
-        <ul role="list" class="navigation">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html">ABOUT US</a></li>
-        </ul>
-        <div class="hamburger">
-          <img src="./assets/hamburger-menu-icon.png" alt="hamburger-icon">
+        <div class="extra-nav">
+          <ul role="list" class="navigation">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+          </ul>
+          <div class="hamburger">
+            <img class="open-hamburger" src="./assets/hamburger-menu-icon.png" alt="hamburger-icon-open">
+          </div>
+  
+          <div class="hamburger-menu hidden">
+            <ul role="list" class="navigation-for-hamburger">
+              <img class="close-hamburger" style="margin-left: auto;" src="./assets/close-icon.png" alt="hamburger-icon-close">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="about.html">ABOUT US</a></li>
+            </ul>
+          </div>
         </div>
       </header>
       <main>
@@ -34,7 +45,7 @@
           </h1>
         </div>
 
-        <div>
+        <div class="container">
           <div class="even-columns">
             <div class="text-container" data-align-center>
               <div data-flex-gradient-border>
@@ -46,12 +57,13 @@
                 In a realm where real estate isn't just about transactions, but the very tapestry of lives, FALAD GROUP LLC emerges as the catalyst between dreams and the tangible. Every step taken within our embrace resonates with the promise of a brighter dwelling, and a richer existence. Come, join us in sculpting futures, in crafting legacies, and in discovering the profound essence of real estate. Because in the FALAD family, excellence isn't just a goal – it's who we are."
                 </p>
             </div>
-            <img src="./assets/section-img-elipse.png" alt="circle-logo">
+            <img src="./assets/double-elipse.png" alt="circle-logo">
           </div>
         </div>
 
-        <div>
-          <div class="even-columns" data-reverse>
+        <div class="container">
+          <div class="even-columns" data-column-reverse>
+            <img src="./assets/section-img-elipse.png" alt="circle-logo">
             <div class="text-container" data-align-center>
               <div data-flex-gradient-border>
                 <div class="gradient-border"></div>
@@ -64,7 +76,6 @@
                 So, why us? Because within the realm of FALAD Group, you will not just our members, but a family. A family bound by commitment, driven by excellence, and united by the vision of creating something truly extraordinary in the world of real estate. Join us, and together, let's redefine the landscape of possibility.
                 </p>
             </div>
-            <img src="./assets/section-img-elipse.png" alt="circle-logo">
           </div>
         </div>
 
@@ -82,8 +93,8 @@
             </div>
           </div>
           <div class="middle">
-            <a class="links" href="#">ABOUT US</a>
-            <a class="links" href="#">HOME</a>
+            <a class="links" href="about.html">ABOUT US</a>
+            <a class="links" href="index.html">HOME</a>
           </div>
           <div class="right">
             <div class="text">
