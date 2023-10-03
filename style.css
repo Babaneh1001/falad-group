@@ -203,12 +203,7 @@ h1, h2, p {
 } */
 
 @media (max-width: 40em){
-  /* p,
-  h1,
-  h2,
-  h3 {
-    text-align: center;
-  } */
+
   p {
     text-align: center;
   }
@@ -390,8 +385,9 @@ header {
 
     & h1 {
       /* color: red; */
-      font-size: 5rem;
-      text-align: center;
+      /* font-size: 5rem; */
+      font-size: clamp(60px, 16vw, 5rem); 
+      /* text-align: center; */
       padding-bottom: 10px;
     }
   }
@@ -407,11 +403,11 @@ header {
   height: 70vh;
   min-width: 300px;
 
-  /* & h1 {
+  & h1 {
     font-weight: var(--fw-s-b);
     font-size: clamp(40px, 6vw, 120px);
     padding-bottom: 50px;
-  } */
+  }
 }
 
 
@@ -421,19 +417,19 @@ header {
 
     & h1 {
       /* color: red; */
-      font-size: clamp(50px, 14vw, 120px);
+      font-size: clamp(40px, 6vw, 120px);
       padding-bottom: 60px;
     }
   }
 }
 
 .content {
-  margin-top: 15rem;
+  margin-top: 10rem;
 }
 
 [data-grid] {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   padding-inline: 30px;
   grid-gap: 25px;
   /* justify-content: space-evenly;
@@ -482,7 +478,7 @@ header {
 .even-columns {
   display: flex;
   padding-inline: 80px;
-  padding-block: 80px;
+  padding-block: 60px;
   /* justify-content: center; */
   gap: 80px;
 
@@ -501,6 +497,8 @@ header {
     display: flex;
     flex-direction: column;
     padding-inline: 20px;
+    padding-block: 40px;
+    gap: 40px;
     /* background-color: red; */
   }
 
